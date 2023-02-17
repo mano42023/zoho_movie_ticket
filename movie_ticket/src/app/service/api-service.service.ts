@@ -7,13 +7,15 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiServiceService {
   baseUrl = environment.baseUrl;
-  userData= environment.userData
+  userData = environment.userData
   constructor(private http: HttpClient) { }
 
   getAllDetails() {
-    this.http.post(this.baseUrl+'?action=getAllDetails', this.userData).subscribe((res)=>{
-      console.log(res);
-      return res
-    })
+    return this.http.post(this.baseUrl + '?action=getAllDetails', this.userData);
   }
+
+  bookSeats(data: any) {
+    return this.http.post(this.baseUrl + '?action=bookSeats', data);
+  }
+
 }

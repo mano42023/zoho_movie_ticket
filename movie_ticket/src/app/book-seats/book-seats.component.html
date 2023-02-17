@@ -1,0 +1,16 @@
+<div>
+    <!-- <div class="seats" *ngFor ="let i of seats">
+        <mat-checkbox class="example-margin" >{{i}}</mat-checkbox>
+    </div> -->
+
+    <form [formGroup]="seatForm" (ngSubmit)="submit()" class="container">
+        <ng-container formArrayName="booked_seats">
+           <div class="seats" *ngFor="let i of seats" >
+              <mat-checkbox class="example-margin" [formControlName]="i">
+                {{i+1}}
+              </mat-checkbox>
+           </div>
+        </ng-container>
+        <button>Submit</button>
+     </form>
+</div>

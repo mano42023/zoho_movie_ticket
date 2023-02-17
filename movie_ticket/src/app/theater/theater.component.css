@@ -1,0 +1,25 @@
+.movie-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.movie_time {
+    box-shadow: 1px 1px 1px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    width: 80px;
+    border-radius: 3px;
+    text-align: center;
+    margin-right: 29px;
+}
+
+.time_box{
+    display: flex;
+    align-items: center;
+}
