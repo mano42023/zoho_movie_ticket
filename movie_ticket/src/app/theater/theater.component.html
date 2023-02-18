@@ -13,7 +13,7 @@
         </mat-button-toggle>
     </mat-button-toggle-group>
 
-    <mat-accordion class="headers-align">
+    <mat-accordion class="headers-align" *ngIf="allData && allData.hasOwnProperty('theatre')">
         <mat-expansion-panel *ngFor="let theater of allData['theatre']; first as isFirst" [expanded]="isFirst">
             <mat-expansion-panel-header>
                 <mat-panel-title>

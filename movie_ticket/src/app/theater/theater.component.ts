@@ -67,6 +67,7 @@ export class TheaterComponent implements OnInit {
     if (booked.length) {
       bSeats = JSON.parse(booked[0]['show' + index + '_booked_seats']);
     }
+    console.log(bSeats)
     let popup = this.dialog.open(BookSeatsComponent, {
       width: '95%',
       data: {

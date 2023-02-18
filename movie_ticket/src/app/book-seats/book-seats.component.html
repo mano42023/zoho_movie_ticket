@@ -1,7 +1,18 @@
 <div class="popup">
-   <h1>{{data.movie_name}}</h1>
-   <div>{{data.theatre_name}} - {{data.date}} {{data.show_time}}</div>
-
+   <div class="title">
+      <div>
+         <h1>{{data.movie_name}}</h1>
+         <div>{{data.theatre_name}} - {{data.date}} {{data.show_time}}</div>
+      </div>
+      <div class="lable-box">
+         <div style="display: flex;">
+            <span class="lable green"></span> Available seats
+         </div>
+         <div style="display: flex;">
+            <span class="lable red"></span> Booked seats
+         </div>
+      </div>
+   </div>
    <form [formGroup]="seatForm" (ngSubmit)="submit()">
       <div class="container">
          <ng-container formArrayName="booked_seats">
