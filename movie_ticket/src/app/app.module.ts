@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { TheaterComponent } from './theater/theater.component';
 import { BookSeatsComponent } from './book-seats/book-seats.component';
@@ -33,6 +34,7 @@ import { BookSeatsComponent } from './book-seats/book-seats.component';
     MatExpansionModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatButtonToggleModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

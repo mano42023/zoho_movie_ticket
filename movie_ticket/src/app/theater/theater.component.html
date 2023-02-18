@@ -1,12 +1,29 @@
-<div>
-    <mat-accordion>
-        <mat-expansion-panel *ngFor="let theater of allData['theatre']">
+<div class="container">
+    <mat-button-toggle-group name="date" aria-label="Font Style" [(ngModel)]="mDate">
+        <mat-button-toggle *ngFor="let d of dateList" value="{{d | date: 'dd/MM/yyyy'}}">
+            <div class="date-day">
+                {{d | date: 'E'}}
+            </div>
+            <div class="date-numeric">
+                {{d | date: 'dd'}}
+            </div>
+            <div class="date-month">
+                {{d | date: 'MMM'}}
+            </div>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-accordion class="headers-align">
+        <mat-expansion-panel *ngFor="let theater of allData['theatre']; first as isFirst" [expanded]="isFirst">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    {{theater['theatre_name']}}
+                    <div>
+                        <div>{{theater['theatre_name']}}</div>
+                        <div class="address">{{theater['address']}}</div>
+                    </div>
                 </mat-panel-title>
                 <mat-panel-description>
-                    <p>Customer Rating : {{theater['customer_rating']}}</p>
+                    <div class="mr-10">Customer Rating: <span class="rating"></span>{{theater['customer_rating']}}</div>
                     <a href="{{theater['website']}}" target="_blank">
                         <mat-icon title="Website">web</mat-icon>
                     </a>
@@ -15,18 +32,21 @@
             <div class="movie-list">
                 <div class="movie" *ngFor="let i of theater['shows'] | keyvalue ">
                     <div style="display: flex;margin-bottom: 10px;">
-                        <img style="margin-right: 10px;" src="{{movieData[$any(i).key]['thumbnail_url']}}" width="120px" alt="{{i.key}}">
+                        <img class="thumbnail" src="{{movieData[$any(i).key]['thumbnail_url']}}" width="120px"
+                            alt="{{i.key}}">
                         <div>
                             <p><b>{{i.key}}</b> ({{movieData[$any(i).key]['language']}})</p>
+                            <p>IMDB: <span class="rating"></span>{{movieData[$any(i).key]['imdb_rating']}}</p>
                             <p>Running time: {{movieData[$any(i).key]['running_time']}}</p>
                             <p>Release date: {{movieData[$any(i).key]['release_date']}}</p>
                             <p>Genre: {{movieData[$any(i).key]['tags']}}</p>
                         </div>
                     </div>
                     <div class="time_box">
-                        <div class="movie_time" *ngFor="let j of $any(i).value" (click)="open_seats(theater['theatre_name'], i.key, j)">
-                            {{j}}
-                        </div>
+                        <button class="movie_time" mat-raised-button *ngFor="let j of $any(i).value"
+                            (click)="open_seats(theater['theatre_name'], i.key, j, theater['booked_seats'])">
+                            {{j.time}}
+                        </button>
                     </div>
                 </div>
             </div>
