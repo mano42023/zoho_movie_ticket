@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-button-toggle-group name="date" aria-label="Font Style" [(ngModel)]="mDate">
+    <mat-button-toggle-group name="date" aria-label="Font Style" [(ngModel)]="mDate" class="date-container">
         <mat-button-toggle *ngFor="let d of dateList" value="{{d | date: 'dd/MM/yyyy'}}">
             <div class="date-day">
                 {{d | date: 'E'}}

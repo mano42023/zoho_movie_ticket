@@ -1,6 +1,11 @@
-.container{
+.container {
     margin: 0px 30px;
 }
+
+.date-container {
+    margin: 10px 0px;
+}
+
 .headers-align .mat-expansion-panel-header-description {
     justify-content: end;
     align-items: center;
@@ -30,10 +35,11 @@
     width: 65%;
 }
 
-.thumbnail{
+.thumbnail {
     margin-right: 10px;
     border-radius: 5px;
 }
+
 .movie_time {
     margin-right: 30px;
 }
@@ -58,7 +64,7 @@
 }
 
 .date-numeric {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -67,12 +73,7 @@
 }
 
 .mat-button-toggle {
-    padding: 0px 10px !important;
-}
-
-.mat-button-toggle:hover {
-    background-color: transparent;
-    color: #1100ff !important;
+    padding: 0px 15px !important;
 }
 
 .mat-button-toggle-checked {
