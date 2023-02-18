@@ -17,6 +17,11 @@ cd movie_ticket
 npm i
 node server.js
 ```
+If everything run successfully you can see below output in cli.
+
+![Production](https://github.com/mano42023/zoho_movie_ticket/blob/main/movie_ticket/screenshot/run_prod.png)
+
+
 Navigate to [http://localhost:3000/](http://localhost:3000/).
 
 > Note: This will run the appliction on port 3000. If port 3000 is not avilable change the port in `server.js` `const port = 3000`
@@ -32,6 +37,19 @@ cd movie_ticket
 npm i
 ng serve
 ````
+If everything run successfully you can see below output in cli.
+
+![Dev](https://github.com/mano42023/zoho_movie_ticket/blob/main/movie_ticket/screenshot/run_dev.png)
+
 
 Navigate to [http://localhost:4200/](http://localhost:4200/).
+
+## Screenshot
+![1](https://github.com/mano42023/zoho_movie_ticket/blob/main/movie_ticket/screenshot/1.png)
+
+![2](https://github.com/mano42023/zoho_movie_ticket/blob/main/movie_ticket/screenshot/2.png)
+
+![3](https://github.com/mano42023/zoho_movie_ticket/blob/main/movie_ticket/screenshot/3.png)
+
+
 
