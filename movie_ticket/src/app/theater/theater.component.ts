@@ -56,6 +56,26 @@ export class TheaterComponent implements OnInit {
     }
   }
 
+  validate(showTime: any) {
+    let d = this.mDate.split('/');
+    let h = showTime.split(':');
+
+    let date = parseInt(d[0]);
+    let month = parseInt(d[1]) - 1;
+    let year = parseInt(d[2]);
+
+    let min = parseInt(h[1].split(' ')[0])
+    let am_pm = h[1].split(' ')[1];
+    let hour = am_pm == 'AM' ? parseInt(h[0]) : parseInt(h[0]) + 12
+    let date1 = new Date(year, month, date, hour, min).getTime();
+    let date2 = new Date().getTime();
+
+    if (date1 > date2) {
+      return false;
+    }
+    return true;
+  }
+
   open_seats(theatre_name: any, movie_name: any, show: any, booked_seats: any) {
     let time = show.time;
     let index = show.index;

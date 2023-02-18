@@ -44,7 +44,8 @@
                     </div>
                     <div class="time_box">
                         <button class="movie_time" mat-raised-button *ngFor="let j of $any(i).value"
-                            (click)="open_seats(theater['theatre_name'], i.key, j, theater['booked_seats'])">
+                            (click)="open_seats(theater['theatre_name'], i.key, j, theater['booked_seats'])"
+                            [disabled]="validate(j.time)">
                             {{j.time}}
                         </button>
                     </div>
