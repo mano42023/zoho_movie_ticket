@@ -2,10 +2,6 @@
     margin: 0px 30px;
 }
 
-.date-container {
-    margin: 10px 0px;
-}
-
 .headers-align .mat-expansion-panel-header-description {
     justify-content: end;
     align-items: center;
@@ -24,66 +20,18 @@
     font-size: 11px;
 }
 
-.movie-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.movie {
-    display: flex;
-    justify-content: space-between;
-    width: 65%;
-}
-
-.thumbnail {
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.movie_time {
-    margin-right: 30px;
-}
-
-.time_box {
-    display: flex;
-    align-items: center;
-}
-
-.date-bar {
-    display: flex;
-}
-
-.date-box {
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    background-color: #f84464;
-    border-radius: 8px;
-    color: white;
-}
-
-.date-numeric {
-    font-size: 20px;
-}
-
-
-::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-    line-height: 25px !important;
-}
-
-.mat-button-toggle {
-    padding: 0px 15px !important;
-}
-
-.mat-button-toggle-checked {
-    background-color: #ec2c4c;
-    color: #f8f8f8 !important;
-}
-
 .rating:before {
     content: "\2605";
     color: gold;
     font-size: 20px;
     padding-right: 4px;
+}
+
+.theater{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    text-align: center;
 }

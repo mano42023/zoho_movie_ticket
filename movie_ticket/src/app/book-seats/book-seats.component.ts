@@ -1,7 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { FormBuilder, FormArray, FormGroup, FormControl } from '@angular/forms';
 import { ApiServiceService } from '../service/api-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -12,10 +14,10 @@ import { ApiServiceService } from '../service/api-service.service';
 export class BookSeatsComponent {
   seatForm!: FormGroup
   seats = [...Array(100).keys()];
-  bookedSeats; any = [];
+  bookedSeats: any = [];
   seatSelected: any = [];
-  constructor(public MatDialogRef: MatDialogRef<BookSeatsComponent>, private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: any, private reqs: ApiServiceService) {
+  data: any;
+  constructor(private fb: FormBuilder, private reqs: ApiServiceService, private route: ActivatedRoute, private router: Router) {
 
     this.seatForm = fb.group({
       "show_time": [''],
@@ -26,9 +28,15 @@ export class BookSeatsComponent {
       "user_mail_id": ['mkumar61293@gmail.com'],
     });
 
-    this.bookedSeats = data['bSeats'];
-    delete data.bSeats;
-    let fDate = data;
+    let state = this.router?.getCurrentNavigation()?.extras;
+    console.log(state)
+    if (state && !('state' in state)){
+      this.router.navigate(['']);
+    }
+    this.data = state?.state;
+    this.bookedSeats = this.data['bSeats'] || [];
+    delete this.data.bSeats;
+    let fDate = this.data;
     this.seatForm.patchValue(fDate);
     let formArray = this.seatForm.get('booked_seats') as FormArray;
     this.seats.forEach(x => {
@@ -57,7 +65,7 @@ export class BookSeatsComponent {
 
     this.reqs.bookSeats(finalForm).subscribe((res: any) => {
       alert(res['message']);
-      this.MatDialogRef.close(); 
+      this.router.navigate(['']); 
     })
 
   }

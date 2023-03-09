@@ -14,15 +14,18 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 
 import { TheaterComponent } from './theater/theater.component';
 import { BookSeatsComponent } from './book-seats/book-seats.component';
+import { ShowsComponent } from './shows/shows.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TheaterComponent,
-    BookSeatsComponent
+    BookSeatsComponent,
+    ShowsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { BookSeatsComponent } from './book-seats/book-seats.component';
     MatDialogModule,
     MatCheckboxModule,
     MatButtonToggleModule,
+    MatCardModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

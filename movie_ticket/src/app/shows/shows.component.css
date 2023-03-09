@@ -1,0 +1,68 @@
+.movie-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.thumbnail {
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.movie_time {
+    margin-right: 30px;
+}
+
+.time_box {
+    display: flex;
+    align-items: center;
+}
+
+
+.container {
+    margin: 0px 30px;
+    width: 90%;
+}
+
+.date-container {
+    margin: 10px 0px;
+}
+
+
+
+.date-bar {
+    display: flex;
+}
+
+.date-box {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f84464;
+    border-radius: 8px;
+    color: white;
+}
+
+.date-numeric {
+    font-size: 20px;
+}
+
+
+::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 25px !important;
+}
+
+.mat-button-toggle {
+    padding: 0px 15px !important;
+}
+
+.mat-button-toggle-checked {
+    background-color: #ec2c4c;
+    color: #f8f8f8 !important;
+}
