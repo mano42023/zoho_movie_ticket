@@ -29,7 +29,6 @@ export class BookSeatsComponent {
     });
 
     let state = this.router?.getCurrentNavigation()?.extras;
-    console.log(state)
     if (state && !('state' in state)){
       this.router.navigate(['']);
     }
@@ -61,7 +60,6 @@ export class BookSeatsComponent {
     const finalForm = Object.assign({}, this.seatForm.value, {
       booked_seats: this.seatSelected
     });
-    console.log(finalForm)
 
     this.reqs.bookSeats(finalForm).subscribe((res: any) => {
       alert(res['message']);
