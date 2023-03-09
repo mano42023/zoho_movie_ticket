@@ -23,7 +23,6 @@ export class ShowsComponent {
     if (this.route.snapshot.queryParams['date']) {
       this.mDate = this.convertToDate(this.route.snapshot.queryParams['date']).toLocaleDateString()
     }
-    console.log(this.mDate)
     this.dateList = this.genrate_date(new Date(), 7);
     this.get_all_data();
   }
@@ -53,13 +52,10 @@ export class ShowsComponent {
       this.movieData[i['movie_name']] = i;
     }
 
-    console.log(this.allData);
-
     let show = this.allData['theatre'].filter((x: any) => x.theatre_name == this.theaterName)
     if (show) {
       this.theater = show[0];
     }
-    console.log(this.theater)
 
   }
 
@@ -109,12 +105,9 @@ export class ShowsComponent {
         hour=12;
       }
     }
-    console.log(year, month, date, hour, min)
-    console.log(new Date(year, month, date, hour, min))
 
     let date1 = new Date(year, month, date, hour, min).getTime();
     let date2 = new Date().getTime();
-    console.log(date1, date2, h[0], am_pm)
     if (date1 > date2) {
       return false;
     }
@@ -132,7 +125,6 @@ export class ShowsComponent {
     if (booked.length) {
       bSeats = JSON.parse(booked[0]['show' + index + '_booked_seats']);
     }
-    console.log(bSeats)
 
     this.router.navigateByUrl('/seats', {
       state: {
